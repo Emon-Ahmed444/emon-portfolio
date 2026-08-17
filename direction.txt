@@ -1,0 +1,167 @@
+You are an expert front-end developer. Build a SINGLE FILE responsive website (one.html file with inline <style> and <script>, no framework, no build step, ready to paste
+into Blogger custom HTML/any static host).
+==============================================
+DESIGN SYSTEM (do not change unless I tell you)
+==============================================
+- Language of UI text: English 
+- Google Fonts: "Poppins, sans-serif"(400,500,600,700) + "Syne, sans-serif" (500,600,700,800)
+- Icons: Font Awesome 6 CDN
+- CSS variables:
+--bg:#f8fafc; --dark:#0f172a; --blue:#2563eb; --blue-hover:#1d4ed8;
+-cyan:#06b6d4; violet: #7c3aed; yt-red:#ff0000;
+--slate-950:#090d16; --slate-900:#0f172a; --slate-800:#1e293b;
+-slate-700:#334155; -slate-600:#475569; slate-500:#64748b;
+--slate-400:#94a3b8; --slate-300:#cbd5e1; --slate-200:#e2e8f0;
+--slate-100:#f1f5f9; --slate-50:#f8fafc;
+--emerald:#10b981;-amber:#f59e0b;
+- Look & feel: Modern SaaS/agency. Gradient text on headlines, soft shadows, rounded 12-24px, smooth scroll, hover-lift cards, infinite marquee strip, count-up numbers,
+reveal-on-scroll.
+- Fully responsive (mobile-first), no horizontal scroll, sticky navbar with mobile hamburger.
+=============================================
+SECTIONS (exact order)
+=============================================
+1) Sticky Navbar - Logo "[[LOGO_INITIAL]]:" + links Home/About Me/Service/Skill/Project/Contact Me + contact CTA "let's talk"
+2) Hero - small badge "Available for new projects", gradient H1, intro, two CTA buttons, profile image right, 3 stat cards
+3) Marquee strip-auto-scrolling achievements separated by
+4) About-years-experience floating badge on photo, headline, story, 3 highlight cards 5) Services 6 numbered cards (01-06) each with WhatsApp "Order Now" button
+6) Skills/Tech Stack - animated progress bars
+7) Recent Projects - 6 project cards (image + category tag + title + "Live Demo")
+8) Reviews - 6 testimonial cards
+9) Contact - left info column + right contact form with success toast
+10) Footer - brand + socials + copyright
+
+All "Order Now" / "Let's talk" / "Contact Me" buttons must link to contact  section
+
+============================================
+CONTENT/INFO TO USE
+============================================
+#IDENTITY
+full_name_English = "EMON"
+logo_initial "EMON"
+title_tag = "Hi! I'm Emon Ahmed - A passionate
+Digital Marketing Strategist &
+SEO Expert"
+meta_description = "Emon Ahmed - A passionate
+Digital Marketing Strategist &
+SEO Expert"
+hero_headline = "We create digital brands that increase sales."
+hero_intro = "I'm Emon, a digital marketing specialist. I've worked with 350+ entrepreneurs and created 1,500+ high-converting landing pages."
+profile_image_url =
+"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiziqcmdGyEVA_6jFj2sbvwVAucMNeKoowz7K3u06kkSF9ZbKI3Qnl7PKxRz1wHhoKIKFcjC8uouD7xaE6 U5dRdD3SVoah4JpMMpnTVKO-RexjVeL7WgBMDLih6340n2mdXZ6kaYucBcWsisl8OxmoEwDBlbct-
+ar_DaKoemcUH993tvvq0fSmshNDzeAWe/s16000/Untitled%20design%20(5).png"
+about_image_url =
+"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhahZYP5UdQKMYaOJzTKV8poCKgygfjGQ0S0dw0zYr_jvo2rMsNNucyydAmDal1Jcq4aN1nuGl-NmO15RdO6smdr2M30ZPg1ca1f0jINUsunCAZNPSuab2CpCDCNJiRw819fw0WlynEgJpx6PJe4ku7tgUyhTXCoXR29ch4BRwHr4OSstTOujvrhGE27Thv/s16000/Gemini_
+Generated_Image_eqaz5jeqaz5jeqaz%20(2).png"
+
+#HERO STATS (3 cards)
+stat1 = {value: "100k", label: "Monthly Sell"।
+stat2 = { value: "1000+", label: "Project complete"}
+stat3 = { value: "Done", label: ""]
+
+# MARQUEE
+marquee = ["১৫০০+ rifk", "২০০+ gilu-commerce foi", "350+ Client Satisfied", "2+ Years of Experience"]
+
+#ABOUT
+years_badge = "2+ Years of Experience"
+
+about_kicker = "About Me"
+about_heading = "A story of modern and custom web design and digital growth"
+about_story = "In the last 4 years, I have designed 200+ e-commerce sites, 1500+ landing pages**, **100+ agency sites, and 20+ course selling platforms
+using Elementor and custom plugins. Clients are generating 50+ crores in sales every month from the funnels I have built."
+about_highlights = [
+[title: "Monthly 100k Sells", desc: "Real track record of clients"),
+{title: "20+ Course Platforms", desc: "Edutech Design Specialist"],
+{title: "Fast Delivary", desc: "Handover before deadline"],
+{title: "Free Support", desc: "30 days live support after delivery"।
+
+# SERVICES (6)
+services = [num: "01", title: "ল্যান্ডিং পেজ ডিজাইন", desc: "হাই-কনভার্টিং সিঙ্গেল প্রোডাক্ট ল্যান্ডিং পেজ যা আপনার সেলস কয়েকগুণ বৃদ্ধি করতে সাহায্য করবে।"],
+[num:"02", title: "ই-কমার্স ওয়েবসাইট", desc:"WooCommerce ও Elementor এর প্রফেশনাল ইন্টিগ্রেশন সহ সম্পূর্ণ অনলাইন স্টোর সলিউশন।"],
+[num:"03", title: "Laravel ওয়েবসাইট", desc:"নিখুঁত কোডিং, হাই স্পিড ও ডেটা সিকিউরিটি সমৃদ্ধ কাস্টম লারাভেল ওয়েব এপ্লিকেশন।"],
+[num:"04", title: "Facebook Ads", desc: "টার্গেটেড কাস্টমার রিচ করতে অ্যাড সেটআপ, পিক্সেল ট্র্যাকিং ও সম্পূর্ণ মার্কেটিং প্ল্যান।"],
+[num: "05", title: "YouTube SEO", desc: "কী-ওয়ার্ড রিসার্চ, এসইও ফ্রেন্ডলি ডেসক্রিপশন ও ভিডিও র‍্যাঙ্ক করানোর আধুনিক কৌশল।"],
+[num:"06", title: "পোর্টফোলিও সাইট", desc: "নিজের ব্র্যান্ডিং তৈরিতে প্রফেশনাল পার্সোনাল ও কর্পোরেট পোর্টফোলিও ওয়েবসাইট।"]
+
+#SKILLS
+skills = [
+{name:"Meta Ads", level:95),
+name:"Google Ads", level:98),
+{name:"GOOGLE ANALYTICS", level:92),
+(name: "SEO", level:80],
+[name:"CONVERSION TRACKING", level:90),
+{name:"CAMPAIGN OPTIMIZATION", level:85}
+{name:"AUDIENCE TARGETING", level:85}
+{name:"A/B TESTING", level:85}
+{name:"LANDING PAGE OPTIMIZATION", level:85}
+{name:"SOCIAL MEDIA MARKETING", level:85}
+1
+
+#PROJECTS (6)
+projects = [
+(title: "Shajbazar Beuty Shop", category: "WordPress eCommerce", demo:"https://shajfood.clickthe.shop/",
+image:"https://blogger.googleusercontent.com/img/b/R29vZ2xI/AVvXsEioctl3diN4da77Cga9aa3bas0jEgz6zoG6XMHK6wcv9bv89uWgcGHmlOW9w74TOHN7Z3xi4ta6j 6Myvgbfca69s7X7j8cLEWL_44TGC4Y6swQfy8VzYBIJwJIrr-goJQ-Azx2eWHHsoywóbB3yP4DGzgmSISIEOEHVZh5VP1Fn-eVlcjhnUt7r2smI0QXc/s16000/1%20(2).png"
+{title: "Folbitan Fresh Market", category: "WordPress eCommerce", demo:"https://folbitan-demo.phpx.shop/",
+image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiEGDI8p8Lul9iv7hlGbk7n-
+kValwgsyQ6XgYnSinaWVJAe9yr9amO39CeELpIIARQFWa2EZ3wmx3EzG6bSTvyg_VzOS8ilkixpnLEWKpZR7sdAydknVmxubUWSolmv4Po389TaFqnO8Wd1OYFToJimeJ
+TVb9Hxh00IC_ZPJTMR5grcpzaFPqfTaYsutPk/s16000/Folbitan_%E2%80%93_Fresh_Fruit_eCommerce_Template_Backup_File_1.png"],
+[title:"Falaq Food eCommerce", category: "WordPress eCommerce", demo:" https://falaqfood-demo.phpx.shop/",
+image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaiRjmEbPoVfV5kVX79cIXb-RNGAx63KAYXQFDBwdIAFtdc6pStxTG4fuQv8wqri-
+8Y0sNT70755u6wUn_u3O-Gd-_VDUqWZrZEI6nm4uGRCw9oOwLQ9ed3nVVLlawVRAjyjytJ4DCfEm40E6GYv-
+8Y7YnNIBCfCHf1rzctZnZXtx83xTME8qtv7yecRY/s16000/FalaqFood_Style_eCommerce_Website_Ready_WordPress_Backup_Project.png"],
+{title:"GadgetGhor Tech Store", category: "WordPress eCommerce", demo:"https://gadgetghor-demo.phpx.shop/",
+image:"https://blogger.googleusercontent.com/img/b/R29vZ2xI/AVvXsEgusYnCO5sNnLm2kyB3W4vMGWxQBPy9eK3sMsOtd1eJmreMJGI3CzC5gU3G177Di5ucmSROE jHJBYcvS_ymlPzghBSX_LRF28IRcfT4q_9h8YqXiE_83VmAcUkjmbo4YZskVnSpCVdIXSkQ9WjkiY0u85qk9qZqmtZeyHoHJ3Qw8DhyphenhyphenR0plRmGuuAzókXw/s160
+00/gadgetghor_%E2%80%93_Elementor_Gadget_eCommerce_Template_Backup_File.png" },
+{title: "Noor Abaya Burka Store", category: "WordPress eCommerce", demo: "https://nooraabaya-demo.phpx.shop/",
+image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcJw8ZuuNGI3TnZWkRkYmzKPTxytzJOS4k9pJlqhO8zXbGOyd6bJO-
+sQaRbpD8JOqVmlzqK2q0yDWVulZmxKwGiFHwlzD3bVd6baO3GF02-
+mG7CaytcnD5nrMbYqpZpgMi8Rg_uXHuTAyqPKBO_zK3c4ggrco1EwHxRU5RIzP5YB10wXiV4V5ZRTLDCrE/s16000/Noor Abaya_%E2%80%93_Elementor_Burka_eCom
+merce_Template_Backup_File_1.png" },
+{title: "Glamour Boutique Store", category: "WordPress eCommerce", demo:"https://glamour-demo.phpx.shop/",
+image:"https://blogger.googleusercontent.com/img/b/R29vZ2xI/AVvXsEh86d5K_9EJF1to229RImX60JzhfRzL-
+_t3ume2B_ymUPxlSmn0x6sQZ4tC_fwwB0Pn3z6WYsud49plb7PPLTstVv-empoB05USOBUSZKEE_6-AfwlCm4770upJe22C8Tf-
+tzK8uGcd5FJE0ydS3Now0RGB4Fv4_NFdHHelL80MrFP5Sb1efUrgoKmHsEA/s16000/1%20(2).png"}
+
+#REVIEWS (6)
+reviews = [
+[quote: "খালেদ ভাইয়ের তৈরি ই-কমার্স ওয়েবসাইটটি অসাধারণ! পিক্সেল ট্র্যাকিং ও চমৎকার স্পিডের কারণে আমার সেলস অনেক বৃদ্ধি পেয়েছে। রিকমেন্ড করছি।",
+name: "আরিফুর রহমান", role:"উদ্যোক্তা, ঢাকা",
+avatar:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=1208g-80 = 1208h = 120.8g = 80 deg * y ,
+{quote:"চমৎকার ল্যান্ডিং পেজ ডিজাইন। রেসপন্স স্পিড অনেক ভালো আর পেজের কনভার্সন রেট এক কথায় খুবই অমায়িক।",
+name: "তাসলিমা সুলতানা", role: "বিউটি শপ ওনার, চট্টগ্রাম",
+avatar:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80"], [quote: "ক্লিন কোড ও সুপার ফাস্ট ওয়েবসাইট। প্রফেশনালভাবে খুবই অল্প সময়ে কাজ সম্পন্ন করেছেন। ওনার টেকনিক্যাল নলেজ অসাধারণ।",
+name: "মাহবুবুল আলম", role: "আইটি কনসালটেন্ট, রাজশাহী",
+avatar:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80" },
+{quote:"আমি ফেসবুক বিজ্ঞাপনের কাজের জন্য ওনাকে হায়ার করেছিলাম। ওনার স্ট্র্যাটেজির কারণে অনেক কম খরচে আমাদের সর্বোচ্চ সেল এসেছে।",
+name:"রফিকুল ইসলাম", role:"ফ্যাশন ব্র্যান্ড ওনার, খুলনা",
+avatar:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&h=120&q=80"],
+[ quote:"ওয়ার্ডপ্রেস এর যেকোনো স্পিড অপ্টিমাইজেশন ও সিকিউরিটি ইস্যুর জন্য খালেদ ভাই সেরা। ওনার তৈরি করা সাইট এখন বিদ্যুতের গতিতে লোড হয়।",
+name: "সাদিয়া আফরিন", role:" এজেন্সি ডিরেক্টর, সিলেট",
+avatar:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80 =120\& h = 1208q =80" .
+{ quote: "আমার অনলাইন কোর্সের প্ল্যাটফর্মটি ওনার হাত দিয়ে তৈরি। চমৎকার মেম্বারশিপ ডিজাইন ও স্বয়ংক্রিয় দারুণ ছিল।",
+name:"তানভীর আহমেদ", role:"অনলাইন ইনস্ট্রাক্টর, কুমিল্লা",
+avatar:"https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&h=120&q=80" }
+1
+
+#CONTACT
+phone = "+8801921023729"
+phone_tel = "+8801921023729"
+email "mdemonahmed7897@gmail.com"
+address = "গোসাইরহাট, শরীয়তপুর, বাংলাদেশ"
+contact_heading = "Let's work together."
+contact_intro = "If you have any plans for the growth of your project or business, feel free to share them."
+form_success = "Thank you! Your message has been sent successfully."
+
+#SOCIAL (footer)
+socials = {
+facebook: "https://facebook.com/",
+linkedin: "https://www.linkedin.com/",
+behance: "https://Behance.net/",
+instagram: "https://instagram.com/"
+}
+================================================
+DELIVERABLE
+================================================
+Return ONE complete index.html file (inline <style> + vanilla <script>, no React/Vue/Tailwind CDN).
+Match colors, fonts, section order and English copy EXACTLY.
+Form should show the success toast on submit (no backend).
+All CTA buttons must point to Contact section.
