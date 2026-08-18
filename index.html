@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Portfolio website | EMON</title>
-<meta name="description" content="Emon Ahmed - A passionate Digital Marketing Strategist & SEO Expert" />
+<meta name="description" content="Emon Ahmed - A passionate Digital Marketing Strategist, SEO Expert & Graphics Designer" />
 <link rel="shortcut icon" href="assets/img/emon's logo.png" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +41,7 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
 .btn-outline{background:#fff;color:var(--slate-900);border:1.5px solid var(--slate-200)}
 .btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
 
-/* Gradient Styled WhatsApp Button - Matching Primary Contact Theme */
+/* Gradient Styled WhatsApp Button */
 .btn-wa{background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;box-shadow:0 10px 20px rgba(37,99,235,0.2);border:1px solid rgba(255,255,255,0.15);justify-content:center;width:100%}
 .btn-wa:hover{background:linear-gradient(135deg,var(--blue-hover),var(--violet));transform:translateY(-2px);box-shadow:0 15px 30px rgba(37,99,235,0.32)}
 
@@ -59,7 +59,6 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
 .nav-links a{color:var(--slate-700);font-weight:500;font-size:15px;transition:color .2s;position:relative;padding:6px 0}
 .nav-links a:hover{color:var(--blue)}
 
-/* Visual Active Marker on Header Links (Scrollspy) */
 .nav-links a.active{
   color: var(--blue);
   font-weight: 700;
@@ -94,7 +93,6 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;position:relative;z-index:1}
 .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--slate-200);padding:8px 16px;border-radius:999px;font-size:13px;color:var(--slate-700);font-weight:500;margin-bottom:22px;box-shadow:var(--shadow-sm)}
 
-/* Gorgeous Ripple/Wave Animation for Badge Dot */
 .badge .dot {
   width: 9px;
   height: 9px;
@@ -207,32 +205,12 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
 .hi-card h4{font-size:16px;margin-bottom:6px}
 .hi-card p{font-size:13px;color:var(--slate-500)}
 
-/* Services Modern Layout Upgrades */
+/* Services */
 .services-section {
   background: radial-gradient(120% 120% at 50% 10%, #fafcff 40%, rgba(37,99,235,0.02) 75%, rgba(124,58,237,0.04) 100%);
   position: relative;
   overflow: hidden;
 }
-.services-decor-1 {
-  position: absolute;
-  top: 10%;
-  left: -5%;
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.04), transparent 70%);
-  pointer-events: none;
-}
-.services-decor-2 {
-  position: absolute;
-  bottom: 5%;
-  right: -5%;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.05), transparent 70%);
-  pointer-events: none;
-}
-
-/* Category Filter Tabs */
 .svc-filters {
   display: flex;
   justify-content: center;
@@ -261,7 +239,6 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
   transform: translateY(-2px);
 }
 
-/* Services Dynamic Grid & Modern Cards */
 .services-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -293,15 +270,24 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
   transition:transform .4s ease;
 }
 .svc-card:hover{
-  transform:translateY(-8px) scale(1.02);
-  box-shadow: var(--shadow-glow);
-  border-color: rgba(37, 99, 235, 0.15);
+  transform:translateY(-8px) scale(1.015);
+  box-shadow: 0 26px 48px rgba(var(--accent, 37,99,235), .18), 0 6px 16px rgba(15,23,42,.06);
+  border-color: rgba(var(--accent, 37,99,235), .28);
 }
 .svc-card:hover::before{
   transform:scaleX(1);
+  background:linear-gradient(90deg, rgba(var(--accent, 37,99,235),1), var(--violet));
+}
+.svc-card:hover h3{
+  background:linear-gradient(135deg, rgba(var(--accent, 37,99,235),1), var(--violet));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.svc-card:hover p{
+  color:var(--slate-600);
 }
 
-/* Featured / Popular Service Accentuation */
 .svc-card.featured {
   border-color: rgba(124, 58, 237, 0.3);
   box-shadow: 0 15px 35px rgba(124, 58, 237, 0.08);
@@ -339,7 +325,6 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
   100% { transform: scale(1.05); }
 }
 
-/* Service Card Components */
 .svc-card-header {
   display: flex;
   justify-content: space-between;
@@ -355,16 +340,23 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
   justify-content: center;
   font-size: 24px;
   color: #fff;
-  transition: transform 0.3s ease;
+  transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .svc-card:hover .svc-icon-box {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.1) rotate(4deg);
+  box-shadow: 0 12px 24px rgba(var(--accent, 37,99,235), .38);
 }
 .svc-num{
   font-size:24px;
   font-weight:800;
   color: var(--slate-300);
   opacity: 0.7;
+  transition: all .4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.svc-card:hover .svc-num{
+  opacity: 0.35;
+  color: rgba(var(--accent, 37,99,235), 1);
+  transform: translateX(2px);
 }
 .svc-card h3{
   font-size:21px;
@@ -380,7 +372,6 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
   flex-grow: 1;
 }
 
-/* Features List in Services */
 .svc-features-list {
   list-style: none;
   margin-bottom: 24px;
@@ -399,16 +390,10 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
 .svc-feature-item i {
   color: var(--emerald);
   font-size: 14px;
+  transition: transform .3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.svc-price-tag {
-  font-weight: 700;
-  font-size: 13.5px;
-  color: var(--blue);
-  background: rgba(37,99,235,0.06);
-  padding: 4px 12px;
-  border-radius: 8px;
-  width: fit-content;
-  margin-bottom: 20px;
+.svc-card:hover .svc-feature-item i {
+  transform: scale(1.15);
 }
 
 .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -422,17 +407,157 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
 .skill-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--violet));border-radius:999px;width:0;transition:width 1.4s ease}
 .skill-pct{display:block;margin-top:8px;font-size:12px;font-weight:600;color:var(--slate-500);position:relative;z-index:1}
 
-/* Gigs & Projects */
+/* Projects & Multi-Image Gallery */
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.proj-card{background:#fff;border:1px solid var(--slate-200);border-radius:20px;overflow:hidden;transition:all .3s}
+.proj-card{background:#fff;border:1px solid var(--slate-200);border-radius:20px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
 .proj-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
-.proj-img{aspect-ratio:2/1;overflow:hidden;background:var(--slate-100)}
-.proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.proj-card:hover .proj-img img{transform:scale(1.06)}
-.proj-body{padding:22px}
-.tag{display:inline-block;background:rgba(37,99,235,.1);color:var(--blue);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:600;margin-bottom:10px}
-.proj-body h3{font-size:18px;margin-bottom:14px}
-.proj-body a{color:var(--blue);font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px}
+
+/* Horizontal sliding multi-image track inside portfolio cards */
+.proj-slider-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: var(--slate-100);
+  overflow: hidden;
+}
+.proj-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+.proj-slider-btn:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(37,99,235,0.4);
+}
+.proj-slider-prev {
+  left: 10px;
+}
+.proj-slider-next {
+  right: 10px;
+}
+.proj-slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.proj-slider::-webkit-scrollbar {
+  display: none;
+}
+.proj-slide-img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: transform .4s ease;
+}
+.proj-card:hover .proj-slide-img {
+  transform: scale(1.03);
+}
+
+/* Lightbox Fullscreen Popup */
+.lightbox-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(8,12,20,0.95);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .35s ease, visibility .35s ease;
+  padding:30px;
+  touch-action: pan-y;
+  user-select: none;
+}
+.lightbox-overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+.lightbox-img-container {
+  position: relative;
+  max-width: 90vw;
+  max-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-img{
+  max-width:90vw;
+  max-height:85vh;
+  border-radius:14px;
+  box-shadow:0 30px 70px rgba(0,0,0,.6);
+  transform:scale(.92);
+  transition:transform .35s cubic-bezier(0.16, 1, 0.3, 1), opacity .25s ease;
+  object-fit:contain;
+}
+.lightbox-overlay.active .lightbox-img{
+  transform:scale(1);
+}
+
+/* Top Right Close Button */
+.lightbox-close{
+  position:fixed;
+  top:24px;
+  right:28px;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.25);
+  color:#fff;
+  font-size:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:all .25s ease;
+  z-index:10000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.lightbox-close:hover{
+  background:var(--blue);
+  border-color:var(--blue);
+  transform:rotate(90deg) scale(1.05);
+}
+
+@media (max-width:640px){
+  .lightbox-close{top:16px;right:16px;width:42px;height:42px;font-size:18px}
+  .lightbox-overlay{padding:16px}
+}
+
+.proj-body{padding:22px;display:flex;flex-direction:column;flex-grow:1}
+.tag{display:inline-block;background:rgba(37,99,235,.1);color:var(--blue);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:600;margin-bottom:10px;width:fit-content}
+.proj-body h3{font-size:18px;margin-bottom:14px;color:var(--slate-900)}
+.proj-body a{color:var(--blue);font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px;margin-top:auto}
 .proj-body a:hover{color:var(--blue-hover)}
 
 .rev-carousel{position:relative;overflow:hidden;padding:8px 4px 4px}
@@ -488,22 +613,18 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 .foot-links a:hover{color:#fff;transform:translateX(5px)}
 .foot-links a:hover::before{opacity:1;transform:translateX(0)}
 
-/* Footer Contact Details */
 .foot-contact-info{display:flex;flex-direction:column;gap:12px}
 .f-contact-item{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--slate-400)}
 .f-contact-item i{color:var(--cyan);font-size:16px;width:20px;text-align:center}
 .f-contact-item a:hover{color:#fff}
 
-/* Gigs & Newsletter CTA inside footer */
 .foot-cta-box{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);padding:20px;border-radius:18px}
 .foot-cta-box p{font-size:13px;color:var(--slate-400);margin-bottom:16px}
 
-/* Social Icons Glow Effect */
 .socials{display:flex;gap:12px}
 .socials a{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:#fff;transition:all .3s}
 .socials a:hover{background:linear-gradient(135deg,var(--blue),var(--violet));transform:translateY(-3px);box-shadow:0 10px 20px rgba(37,99,235,0.3);border-color:transparent}
 
-/* Footer Bottom elements */
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:30px;flex-wrap:wrap;gap:20px}
 .copyright{font-size:13.5px;color:var(--slate-500)}
 .copyright i{color:#f64f59;animation:heartPulse 1.5s infinite}
@@ -570,8 +691,6 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
     transform:translateY(0);
   }
   .nav-cta{display:none}
-  
-  /* Mobile Menu Link Alignments */
   .nav-links a{
     padding: 8px 0;
     display: block;
@@ -581,7 +700,6 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
     width: 25px; 
   }
   
-  /* Responsive Hero Image Adjustments */
   .home__images {
     width: 210px;
     height: 260px;
@@ -628,7 +746,6 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
   .foot-layout{grid-template-columns:1fr;gap:30px}
 }
 @media (max-width:480px){
-  /* Deep Mobile Optimization */
   .home__images {
     width: 170px;
     height: 210px;
@@ -688,17 +805,17 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
     <div class="hero-grid">
 
       <div class="reveal fade-right">
-        <span class="badge"><span class="dot"></span> Available for new projects</span>
-        <h1>We create <span class="gradient-text">digital brands</span> that increase sales.</h1>
-        <p class="intro">I'm Emon, a digital marketing specialist. I've worked with 350+ entrepreneurs and created 1,500+ high-converting landing pages.</p>
+        <span class="badge"><span class="dot"></span> Available for marketing projects</span>
+        <h1>We create <span class="gradient-text">digital marketing</span> campaigns that scale sales.</h1>
+        <p class="intro">I'm Emon, a Digital Marketing Strategist & Lead Generation Expert. I help brands grow with high-converting Meta Ads, Google Ads, SEO, Social Media Marketing, and High-CTR Graphics Design.</p>
         <div class="hero-cta">
           <a href="#contact" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
           <a href="#projects" class="btn btn-outline">View Projects</a>
         </div>
         <div class="hero-stats">
-          <div class="stat-card reveal zoom-in" style="--d:.15s"><div class="val" data-count="100">0</div><div class="lbl">Monthly Sell (k)</div></div>
-          <div class="stat-card reveal zoom-in" style="--d:.3s"><div class="val" data-count="1000">0</div><div class="lbl">Project Complete</div></div>
-          <div class="stat-card reveal zoom-in" style="--d:.45s"><div class="val">Done</div><div class="lbl">On Time Delivery</div></div>
+          <div class="stat-card reveal zoom-in" style="--d:.15s"><div class="val" data-count="100">0</div><div class="lbl">Monthly Sales ($k)</div></div>
+          <div class="stat-card reveal zoom-in" style="--d:.3s"><div class="val" data-count="500">0</div><div class="lbl">Campaigns Managed</div></div>
+          <div class="stat-card reveal zoom-in" style="--d:.45s"><div class="val">100%</div><div class="lbl">Growth Focus</div></div>
         </div>
       </div>
 
@@ -706,7 +823,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
           <div class="home__box-1"></div>
           <div class="home__box-2"></div>
           <div class="home__box-3"></div>
-          <img src="Assets/img/home-img.png" alt="Digital professional portrait" class="home__img" >
+          <img src="Assets/img/home-img.png" alt="Digital marketing specialist portrait" class="home__img" >
       </div>
 
     </div>
@@ -718,7 +835,6 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
   <div class="marquee-track" id="marqueeTrack"></div>
 </div>
 
-<!-- About -->
 <section class="section" id="about">
   <div class="container">
     <div class="about-grid">
@@ -728,13 +844,13 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
       </div>
       <div class="reveal fade-left">
         <span class="kicker">About Me</span>
-        <h2 class="section-title">A story of <span class="gradient-text">modern web design</span> and digital growth</h2>
-        <p style="color:var(--slate-600);margin-bottom:20px">In the last 4 years, I have designed 200+ e-commerce sites, 1500+ landing pages, 100+ agency sites, and 20+ course selling platforms using Elementor and custom plugins. Clients are generating 50+ crores in sales every month from the funnels I have built.</p>
+        <h2 class="section-title">A story of <span class="gradient-text">data-driven marketing</span> and business growth</h2>
+        <p style="color:var(--slate-600);margin-bottom:20px">Over the past 2+ years, I have specialized in Meta Ads, Google Ads, SEO ranking, social media management, and high-impact graphics design. By blending market research, targeted ad copy, and engaging visuals (social posters & YouTube thumbnails), I help businesses generate consistent revenue, maximize ROAS, and scale their reach.</p>
         <div class="highlights">
-          <div class="hi-card reveal fade-up" style="--d:.05s"><i class="fa-solid fa-chart-line"></i><h4>Monthly 100k Sells</h4><p>Real track record of clients</p></div>
-          <div class="hi-card reveal fade-up" style="--d:.15s"><i class="fa-solid fa-graduation-cap"></i><h4>20+ Course Platforms</h4><p>Edutech design specialist</p></div>
-          <div class="hi-card reveal fade-up" style="--d:.25s"><i class="fa-solid fa-bolt"></i><h4>Fast Delivery</h4><p>Handover before deadline</p></div>
-          <div class="hi-card reveal fade-up" style="--d:.35s"><i class="fa-solid fa-headset"></i><h4>Free Support</h4><p>30 days live support after delivery</p></div>
+          <div class="hi-card reveal fade-up" style="--d:.05s"><i class="fa-solid fa-chart-line"></i><h4>High ROAS Campaigns</h4><p>Proven sales growth strategy</p></div>
+          <div class="hi-card reveal fade-up" style="--d:.15s"><i class="fa-solid fa-bullseye"></i><h4>Targeted Lead Gen</h4><p>Quality customer acquisition</p></div>
+          <div class="hi-card reveal fade-up" style="--d:.25s"><i class="fa-solid fa-magnifying-glass-chart"></i><h4>SEO & YouTube Ranking</h4><p>Organic audience building</p></div>
+          <div class="hi-card reveal fade-up" style="--d:.35s"><i class="fa-solid fa-palette"></i><h4>High-CTR Creative Design</h4><p>Social posters & thumbnails</p></div>
         </div>
       </div>
 
@@ -742,52 +858,58 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
   </div>
 </section>
 
-<!-- Services -->
 <section class="section services-section" id="services">
-  <div class="services-glow-1"></div>
-  <div class="services-glow-2"></div>
   <div class="container">
     <div class="reveal fade-up" style="text-align:center;margin-bottom:40px">
       <span class="kicker">My Premium Services</span>
       <h2 class="section-title">What I Specialise <span class="gradient-text">In</span></h2>
-      <p style="color:var(--slate-500); max-width:650px; margin:0 auto; font-size:15px;">আপনার বিজনেসের সেলস বৃদ্ধি করতে এবং ডিজিটাল ব্র্যান্ডিং তৈরিতে আমি নিচের সেবাগুলো দিয়ে থাকি। আপনার চাহিদা অনুযায়ী ক্যাটাগরি সিলেক্ট করুন।</p>
+      <p style="color:var(--slate-500); max-width:650px; margin:0 auto; font-size:15px;">I provide end-to-end digital marketing solutions designed to expand your brand authority, generate leads, and boost conversions.</p>
     </div>
 
-    <!-- Interactive Category Filter Tab Menu -->
+    <!-- Category Filter Tab Menu -->
     <div class="svc-filters reveal fade-up" style="--d: .1s">
       <button class="svc-filter-btn active" data-filter="all">All Services</button>
-      <button class="svc-filter-btn" data-filter="web">Web Design & Funnel</button>
-      <button class="svc-filter-btn" data-filter="marketing">Digital Marketing</button>
-      <button class="svc-filter-btn" data-filter="branding">Branding & SEO</button>
+      <button class="svc-filter-btn" data-filter="marketing">Advertising & Lead Gen</button>
+      <button class="svc-filter-btn" data-filter="social">Social Media Marketing</button>
+      <button class="svc-filter-btn" data-filter="seo">SEO & Growth</button>
+      <button class="svc-filter-btn" data-filter="graphics">Graphics Design</button>
     </div>
 
     <div class="services-grid" id="servicesGrid"></div>
   </div>
 </section>
 
-<!-- Skills -->
 <section class="section" id="skills">
   <div class="container">
     <div class="reveal fade-up" style="text-align:center;margin-bottom:50px">
       <span class="kicker">My Skills</span>
-      <h2 class="section-title">Tech <span class="gradient-text">Stack</span></h2>
+      <h2 class="section-title">Marketing & Design <span class="gradient-text">Stack</span></h2>
     </div>
     <div class="skills-grid" id="skillsGrid"></div>
   </div>
 </section>
 
-<!-- Projects -->
 <section class="section" id="projects" style="background:#fff">
   <div class="container">
-    <div class="reveal fade-up" style="text-align:center;margin-bottom:50px">
-      <span class="kicker">Portfolio</span>
-      <h2 class="section-title">Recent <span class="gradient-text">Projects</span></h2>
+    <div class="reveal fade-up" style="text-align:center;margin-bottom:40px">
+      <span class="kicker">Portfolio Gallery</span>
+      <h2 class="section-title">Recent Marketing <span class="gradient-text">Work</span></h2>
+      <p style="color:var(--slate-500); max-width:620px; margin:10px auto 0; font-size:14.5px;">Slide through images on each project card. Click any image to open the fullscreen popup gallery.</p>
     </div>
+
+    <!-- Portfolio Filter Tabs -->
+    <div class="svc-filters reveal fade-up" style="--d: .1s; margin-bottom:40px">
+      <button class="svc-filter-btn active" data-projfilter="all">All</button>
+      <button class="svc-filter-btn" data-projfilter="metaads">Meta Ads</button>
+      <button class="svc-filter-btn" data-projfilter="googleads">Google Ads</button>
+      <button class="svc-filter-btn" data-projfilter="seo">SEO & Growth</button>
+      <button class="svc-filter-btn" data-projfilter="graphics">Graphics Design</button>
+    </div>
+
     <div class="proj-grid" id="projGrid"></div>
   </div>
 </section>
 
-<!-- Reviews -->
 <section class="section" id="reviews">
   <div class="container">
     <div class="reveal fade-up" style="text-align:center;margin-bottom:50px">
@@ -810,8 +932,8 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
     <div class="contact-grid">
       <div class="reveal">
         <span class="kicker">Contact</span>
-        <h2 class="section-title">Let's work <span class="gradient-text">together.</span></h2>
-        <p style="color:var(--slate-600);margin-bottom:30px">If you have any plans for the growth of your project or business, feel free to share them.</p>
+        <h2 class="section-title">Let's scale your <span class="gradient-text">brand.</span></h2>
+        <p style="color:var(--slate-600);margin-bottom:30px">Ready to accelerate your growth, boost sales, or launch high-converting marketing campaigns? Send me a message and let's get started.</p>
         
         <div class="ci-list">
           <div class="ci-item">
@@ -834,7 +956,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
             <div class="ic"><i class="fa-solid fa-location-dot"></i></div>
             <div class="ci-content">
               <h4>Address</h4>
-              <p>গোসাইরহাট, শরীয়তপুর, বাংলাদেশ</p>
+              <p>Gosairhat, Shariatpur, Bangladesh</p>
             </div>
           </div>
         </div>
@@ -845,8 +967,8 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
           <div class="form-group"><label>Your Name</label><input type="text" required placeholder="John Doe"/></div>
           <div class="form-group"><label>Your Email</label><input type="email" required placeholder="you@email.com"/></div>
         </div>
-        <div class="form-group"><label>Subject</label><input type="text" required placeholder="Project inquiry"/></div>
-        <div class="form-group"><label>Message</label><textarea required placeholder="Tell me about your project..."></textarea></div>
+        <div class="form-group"><label>Subject</label><input type="text" required placeholder="Marketing Campaign / Lead Gen Inquiry"/></div>
+        <div class="form-group"><label>Message</label><textarea required placeholder="Tell me about your marketing goals, budget, or business..."></textarea></div>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Message <i class="fa-solid fa-paper-plane"></i></button>
       </form>
     </div>
@@ -856,10 +978,9 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 <footer>
   <div class="container">
     <div class="foot-layout">
-      <!-- Footer Column 1: Brand details and Social Icons -->
       <div class="foot-brand">
         <a href="#home" class="logo">EMON<span>.</span></a>
-        <p>আমরা তৈরি করি আকর্ষণীয় এবং হাই-কনভার্টিং ডিজিটাল ব্র্যান্ড ও সেলস ফানেল যা আপনার ব্যবসায়ের আয় দ্রুত বৃদ্ধি করতে কাজ করবে।</p>
+        <p>Data-driven digital marketing strategist helping companies build brand authority, run ROI-focused advertising campaigns, and scale sales exponentially.</p>
         <div class="socials">
           <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -868,7 +989,6 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
         </div>
       </div>
       
-      <!-- Footer Column 2: Navigation Links -->
       <div>
         <h3 class="foot-heading">Quick Links</h3>
         <ul class="foot-links">
@@ -880,7 +1000,6 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
         </ul>
       </div>
 
-      <!-- Footer Column 3: Contact Details -->
       <div>
         <h3 class="foot-heading">Get in Touch</h3>
         <div class="foot-contact-info">
@@ -894,16 +1013,15 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
           </div>
           <div class="f-contact-item">
             <i class="fa-solid fa-location-dot"></i>
-            <span>গোসাইরহাট, শরীয়তপুর</span>
+            <span>Gosairhat, Shariatpur</span>
           </div>
         </div>
       </div>
 
-      <!-- Footer Column 4: Newsletter/Call to Action -->
       <div>
         <h3 class="foot-heading">Start a project</h3>
         <div class="foot-cta-box">
-          <p>আপনার ব্যবসাকে পরবর্তী ধাপে নিয়ে যাওয়ার জন্য আজই আলোচনা শুরু করুন।</p>
+          <p>Let's design a marketing strategy that scales your revenue today.</p>
           <a href="#contact" class="btn btn-primary" style="padding:10px 16px; font-size:13.5px; width:100%; justify-content:center">
             Hire Me <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -911,7 +1029,6 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
       </div>
     </div>
     
-    <!-- Footer Bottom Details -->
     <div class="foot-bottom">
       <div class="copyright">
         © 2026 EMON. Crafted with <i class="fa-solid fa-heart"></i> in Bangladesh. All rights reserved.
@@ -925,14 +1042,23 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 
 <div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span>Thank you! Your message has been sent successfully.</span></div>
 
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <div class="lightbox-img-container">
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Portfolio preview"/>
+  </div>
+</div>
+
 <script>
 // Marquee Setup
-const marqueeItems = ["1500+ Landing Pages","200+ eCommerce Sites","350+ Clients Satisfied","2+ Years of Experience"];
+const marqueeItems = ["Meta Ads & Funnels", "Google PPC Ads", "Social Media Marketing", "YouTube SEO & Ranking", "High-CTR Graphic Design", "Lead Generation"];
 const track = document.getElementById('marqueeTrack');
 const mh = marqueeItems.map(i=>`<div class="marquee-item">${i}</div>`).join('');
 track.innerHTML = mh + mh;
 
-// Intersection Observer for Scroll Reveal (Declaring early to prevent initialization ReferenceError)
+// Intersection Observer for Scroll Reveal
 const io = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
@@ -950,73 +1076,84 @@ function bindReveal(){
   document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
 }
 
-// Service Data with specialized categories, premium visual assets, checklists & pricing info
+// Marketing Services Data
 const services = [
   {
     num: "01",
-    category: "web",
-    title: "ল্যান্ডিং পেজ ডিজাইন",
-    desc: "হাই-কনভার্টিং সিঙ্গেল প্রোডাক্ট ল্যান্ডিং পেজ যা আপনার বিজনেসের কাস্টমারদের অর্ডার বা লিড জেনারেশনকে কয়েক গুণ বৃদ্ধি করবে।",
-    icon: "fa-solid fa-wand-magic-sparkles",
-    bg: "linear-gradient(135deg, #2563eb, #06b6d4)",
-    badge: "Most Popular",
-    price: "৳ ৩,৫০০ থেকে শুরু",
-    features: ["সুপার ফাস্ট লোডিং স্পিড", "১০০% রেসপন্সিভ মোবাইল ফ্রেন্ডলি", "অর্ডার ফর্ম ও পিক্সেল ইন্টিগ্রেশন", "ফ্রি ডোমেইন হোস্টিং কানেক্টিভিটি"]
+    category: "marketing",
+    title: "Facebook & Meta Ads Campaign",
+    desc: "Highly optimized Meta advertising campaigns with precise target audience research, retargeting funnels, and high ROAS.",
+    icon: "fa-brands fa-facebook",
+    bg: "linear-gradient(135deg, #0866ff, #0052cc)",
+    rgb: "8,102,255",
+    badge: "High ROI",
+    features: ["Audience research & persona mapping", "Conversion Pixel & CAPI setup", "Ad creative & ad copy copywriting", "Budget & bid optimization"]
   },
   {
     num: "02",
-    category: "web",
-    title: "ই-কমার্স ওয়েবসাইট",
-    desc: "WooCommerce ও Elementor ব্যবহার করে প্রিমিয়াম লুকিং ও ফিচার-সমৃদ্ধ প্রফেশনাল অনলাইন শপ ডেভেলপমেন্ট সমাধান।",
-    icon: "fa-solid fa-store",
-    bg: "linear-gradient(135deg, #7c3aed, #ec4899)",
-    badge: "Premium Quality",
-    price: "৳ ৮,৫০০ থেকে শুরু",
-    features: ["আনলিমিটেড প্রোডাক্ট আপলোড", "কুরিয়ার ও পেমেন্ট গেটওয়ে সেটআপ", "অটোমেটেড ওয়ান-পেজ চেকআউট", "অর্ডার নোটিফিকেশন সিস্টেম"]
+    category: "social",
+    title: "Social Media Marketing",
+    desc: "Full-service social media management, strategic content calendars, community engagement, and brand organic growth.",
+    icon: "fa-solid fa-share-nodes",
+    bg: "linear-gradient(135deg, #7c3aed, #2563eb)",
+    rgb: "124,58,237",
+    badge: "Popular",
+    features: ["Content planning & strategy", "Platform engagement growth", "Brand storytelling & posts", "Performance analytics & metrics"]
   },
   {
     num: "03",
-    category: "web",
-    title: "Laravel কাস্টম ওয়েবসাইট",
-    desc: "নিখুঁত ও ডাইনামিক কোডিং দ্বারা তৈরি অত্যন্ত নিরাপদ, দ্রুতগতির ও কাস্টমাইজড লারাভেল ওয়েব অ্যাপ্লিকেশন ডেভেলপমেন্ট।",
-    icon: "fa-solid fa-code",
-    bg: "linear-gradient(135deg, #ef4444, #f59e0b)",
-    badge: "Best Coding",
-    price: "৳ ১৫,০০০ থেকে শুরু",
-    features: ["উন্নত সিকিউর অ্যাডমিন প্যানেল", "সম্পূর্ণ কাস্টমাইজড আর্কিটেকচার", "ফাস্ট ডেটাবেস অপ্টিমাইজেশন", "ভবিষ্যতে স্কেল আপ করার সুবিধা"]
+    category: "marketing",
+    title: "Google Ads & PPC Lead Gen",
+    desc: "Targeted Search & Display PPC campaigns designed to capture intent-driven leads and maximize conversion value.",
+    icon: "fa-brands fa-google",
+    bg: "linear-gradient(135deg, #4285f4, #ea4335)",
+    rgb: "66,133,244",
+    badge: "High Intent",
+    features: ["Keyword intent research", "Negative keyword filtering", "Landing page conversion audit", "Quality score optimization"]
   },
   {
     num: "04",
-    category: "marketing",
-    title: "Facebook Ads Campaign",
-    desc: "আপনার টার্গেটেড কাস্টমারদের কাছে প্রোডাক্ট পৌঁছানোর জন্য সেলস ফানেল সহ হাইলি অপ্টিমাইজড ফেসবুক বিজ্ঞাপন ক্যাম্পেইন।",
-    icon: "fa-brands fa-facebook",
-    bg: "linear-gradient(135deg, #0866ff, #0052cc)",
-    badge: "High ROI",
-    price: "৳ ৫,০০০ থেকে শুরু",
-    features: ["গভীরভাবে অডিয়েন্স রিসার্চ", "কনভার্সন ট্র্যাকিং ও API সেটআপ", "অ্যাড কপি এবং ব্যানার আইডিয়া", "অ্যাড স্পেন্ড বাজেট অপ্টিমাইজেশন"]
+    category: "seo",
+    title: "YouTube SEO & Channel Growth",
+    desc: "Modern algorithm strategies for channel expansion, video keyword optimization, metadata structure, and CTR boost.",
+    icon: "fa-brands fa-youtube",
+    bg: "linear-gradient(135deg, #ff0000, #92003b)",
+    rgb: "255,0,0",
+    badge: "Organic Reach",
+    features: ["Video keyword optimization", "Title & description scripting", "Channel branding strategy", "CTR thumbnail optimization"]
   },
   {
     num: "05",
-    category: "branding",
-    title: "YouTube SEO & Optimization",
-    desc: "চ্যানেল গ্রোথ বৃদ্ধির আধুনিক অ্যালগরিদম কৌশল অবলম্বন করে ভিডিও র‍্যাঙ্কিং, কী-ওয়ার্ড রিসার্চ ও অর্গানিক ভিউ বৃদ্ধি।",
-    icon: "fa-brands fa-youtube",
-    bg: "linear-gradient(135deg, #ff0000, #92003b)",
-    badge: "Organic Growth",
-    price: "৳ ৪,০০০ থেকে শুরু",
-    features: ["ভিডিও অন-পেজ এসইও স্ক্রিপ্ট", "কী-ওয়ার্ড রেকমেন্ডেশন গাইড", "চ্যানেল ব্র্যান্ডিং কাস্টমাইজেশন", "আকর্ষণীয় থাম্বনেইল অপ্টিমাইজেশন"]
+    category: "seo",
+    title: "Search Engine Optimization (SEO)",
+    desc: "Comprehensive on-page, off-page, and technical SEO strategy to rank your brand on Google top results.",
+    icon: "fa-solid fa-magnifying-glass-chart",
+    bg: "linear-gradient(135deg, #10b981, #059669)",
+    rgb: "16,185,129",
+    badge: "Top Ranking",
+    features: ["In-depth competitor analysis", "On-page & technical audit", "Quality backlink outreach", "Search ranking tracking"]
   },
   {
     num: "06",
-    category: "branding",
-    title: "পার্সোনাল পোর্টফোলিও সাইট",
-    desc: "নিজের ব্যক্তিগত ব্র্যান্ডিং ও কাজের প্রফেশনালিজম ফুটিয়ে তোলার জন্য অসাধারণ ও মডার্ন পোর্টফোলিও ওয়েবসাইট তৈরি।",
-    icon: "fa-solid fa-briefcase",
-    bg: "linear-gradient(135deg, #06b6d4, #10b981)",
-    badge: "Branding Essential",
-    price: "৳ ৫,০০০ থেকে শুরু",
-    features: ["রেজুমে ও গ্যালারি সেকশন", "ডাইনামিক কন্টাক্ট ফর্ম এবং ম্যাপ", "ফ্রি লাইফটাইম মেইনটেইন্যান্স গাইড", "সোশ্যাল মিডিয়া ইন্টিগ্রেশন"]
+    category: "graphics",
+    title: "YouTube Thumbnail Design",
+    desc: "Eye-catching, ultra-high click-through rate thumbnail designs crafted to stand out and turn impressions into views.",
+    icon: "fa-solid fa-image",
+    bg: "linear-gradient(135deg, #7c3aed, #ec4899)",
+    rgb: "124,58,237",
+    badge: "High CTR",
+    features: ["Custom high-contrast concepts", "Click-focused typography", "Express delivery turnaround", "Unlimited design iterations"]
+  },
+  {
+    num: "07",
+    category: "graphics",
+    title: "Social Media Poster Design",
+    desc: "Modern visual assets, banner designs, and social media posters styled to capture instant user attention in feeds.",
+    icon: "fa-solid fa-palette",
+    bg: "linear-gradient(135deg, #06b6d4, #2563eb)",
+    rgb: "6,182,212",
+    badge: "Brand Ready",
+    features: ["Brand-consistent aesthetic", "Multi-platform format sizes", "High-res print/web export", "Source design files included"]
   }
 ];
 
@@ -1026,7 +1163,6 @@ function renderServices(filter = "all") {
   const filtered = filter === "all" ? services : services.filter(s => s.category === filter);
   
   servicesGrid.innerHTML = filtered.map((s, i) => {
-    // Generate feature items list
     const featuresHTML = s.features.map(f => `
       <li class="svc-feature-item">
         <i class="fa-solid fa-circle-check"></i>
@@ -1034,9 +1170,8 @@ function renderServices(filter = "all") {
       </li>
     `).join('');
 
-    // Generate Service Card layout
     return `
-      <div class="svc-card reveal fade-up ${s.badge ? 'featured' : ''}" style="--d:${(i % 3) * 0.1}s">
+      <div class="svc-card reveal fade-up ${s.badge ? 'featured' : ''}" style="--d:${(i % 3) * 0.1}s; --accent:${s.rgb || '37,99,235'}">
         ${s.badge ? `<div class="svc-badge">${s.badge}</div>` : ''}
         <div class="svc-card-header">
           <div class="svc-icon-box" style="background: ${s.bg}">
@@ -1046,50 +1181,44 @@ function renderServices(filter = "all") {
         </div>
         <h3>${s.title}</h3>
         <p>${s.desc}</p>
-        <div class="svc-price-tag">${s.price}</div>
         <ul class="svc-features-list">
           ${featuresHTML}
         </ul>
         <a href="https://wa.me/8801921023729?text=Hello%20Emon,%20I%20am%20interested%20in%20your%20service:%20${encodeURIComponent(s.title)}" target="_blank" class="btn btn-wa">
-          <i class="fa-brands fa-whatsapp"></i> Order Now
+          <i class="fa-brands fa-whatsapp"></i> Order Service
         </a>
       </div>
     `;
   }).join('');
   
-  // Re-run animation observer triggers for newly loaded elements
   bindReveal();
 }
 
-// Initial Service Rendering on page load
 renderServices();
 
-// Service Category Filter Events
-const filterButtons = document.querySelectorAll('.svc-filter-btn');
+const filterButtons = document.querySelectorAll('[data-filter]');
 filterButtons.forEach(btn => {
   btn.addEventListener('click', () => {
-    // Active class toggles
     filterButtons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    
-    const filterValue = btn.getAttribute('data-filter');
-    renderServices(filterValue);
+    renderServices(btn.getAttribute('data-filter'));
   });
 });
 
+// Skills Data
 const skills = [
   {name:"Meta Ads",level:95,icon:"fa-brands fa-meta",bg:"linear-gradient(135deg,#0866ff,#0052cc)"},
-  {name:"Google Ads",level:98,icon:"fa-brands fa-google",bg:"linear-gradient(135deg,#4285f4,#ea4335)"},
-  {name:"Google Analytics",level:92,icon:"fa-solid fa-chart-line",bg:"linear-gradient(135deg,#f9ab00,#e37400)"},
-  {name:"SEO",level:80,icon:"fa-solid fa-magnifying-glass-chart",bg:"linear-gradient(135deg,#10b981,#059669)"},
-  {name:"Conversion Tracking",level:90,icon:"fa-solid fa-bullseye",bg:"linear-gradient(135deg,#ef4444,#dc2626)"},
-  {name:"Campaign Optimization",level:85,icon:"fa-solid fa-rocket",bg:"linear-gradient(135deg,#7c3aed,#5b21b6)"},
-  {name:"Audience Targeting",level:85,icon:"fa-solid fa-users-viewfinder",bg:"linear-gradient(135deg,#06b6d4,#0891b2)"},
-  {name:"A/B Testing",level:85,icon:"fa-solid fa-flask",bg:"linear-gradient(135deg,#f59e0b,#d97706)"},
-  {name:"Landing Page Optimization",level:85,icon:"fa-solid fa-window-maximize",bg:"linear-gradient(135deg,#ec4899,#be185d)"},
-  {name:"Social Media Marketing",level:85,icon:"fa-solid fa-share-nodes",bg:"linear-gradient(135deg,#2563eb,#7c3aed)"},
-  {name:"WordPress",level:92,icon:"fa-brands fa-wordpress",bg:"linear-gradient(135deg,#21759b,#0073aa)"},
-  {name:"Elementor",level:90,icon:"fa-solid fa-pen-ruler",bg:"linear-gradient(135deg,#92003b,#d63384)"}
+  {name:"Google Ads",level:92,icon:"fa-brands fa-google",bg:"linear-gradient(135deg,#4285f4,#ea4335)"},
+  {name:"Google Analytics",level:90,icon:"fa-solid fa-chart-line",bg:"linear-gradient(135deg,#f9ab00,#e37400)"},
+  {name:"SEO Ranking",level:88,icon:"fa-solid fa-magnifying-glass-chart",bg:"linear-gradient(135deg,#10b981,#059669)"},
+  {name:"Conversion Tracking",level:92,icon:"fa-solid fa-bullseye",bg:"linear-gradient(135deg,#ef4444,#dc2626)"},
+  {name:"Social Media Strategy",level:94,icon:"fa-solid fa-share-nodes",bg:"linear-gradient(135deg,#7c3aed,#5b21b6)"},
+  {name:"Audience Targeting",level:95,icon:"fa-solid fa-users-viewfinder",bg:"linear-gradient(135deg,#06b6d4,#0891b2)"},
+  {name:"A/B Split Testing",level:88,icon:"fa-solid fa-flask",bg:"linear-gradient(135deg,#f59e0b,#d97706)"},
+  {name:"Photoshop",level:90,icon:"fa-solid fa-image",bg:"linear-gradient(135deg,#001e36,#31a8ff)"},
+  {name:"Illustrator",level:86,icon:"fa-solid fa-bezier-curve",bg:"linear-gradient(135deg,#330000,#ff9a00)"},
+  {name:"YouTube SEO",level:92,icon:"fa-brands fa-youtube",bg:"linear-gradient(135deg,#ff0000,#92003b)"},
+  {name:"Lead Funnels",level:90,icon:"fa-solid fa-filter-circle-dollar",bg:"linear-gradient(135deg,#2563eb,#7c3aed)"}
 ];
 document.getElementById('skillsGrid').innerHTML = skills.map((s,i)=>`
   <div class="skill-card reveal zoom-in" style="--d:${(i%4)*.08}s">
@@ -1099,33 +1228,236 @@ document.getElementById('skillsGrid').innerHTML = skills.map((s,i)=>`
     <span class="skill-pct">${s.level}%</span>
   </div>`).join('');
 
-// Projects
 const projects = [
-  {title:"Shajbazar Beauty Shop",category:"WordPress eCommerce",demo:"https://shajfood.clickthe.shop/",image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioctl3diN4da77Cga9aa3bas0jEgz6zoG6XMHK6wcv9bv89uWgcGHmlOW9w74TOHN7Z3xi4ta6j6Myvgbfca69s7X7j8cLEWL_44TGC4Y6swQfy8VzYBIJwJIrr-goJQ-Azx2eWHHsoyw6bB3yP4DGzgmSISIEOEHVZh5VP1Fn-eVlcjhnUt7r2smI0QXc/s16000/1%20(2).png"},
-  {title:"Folbitan Fresh Market",category:"WordPress eCommerce",demo:"https://folbitan-demo.phpx.shop/",image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiEGDI8p8Lul9iv7hlGbk7n-kValwgsyQ6XgYnSinaWVJAe9yr9amO39CeELpIIARQFWa2EZ3wmx3EzG6bSTvyg_VzOS8ilkixpnLEWKpZR7sdAydknVmxubUWSolmv4Po389TaFqnO8Wd1OYFToJimeJTVb9Hxh00IC_ZPJTMR5grcpzaFPqfTaYsutPk/s16000/Folbitan_%E2%80%93_Fresh_Fruit_eCommerce_Template_Backup_File_1.png"},
-  {title:"Falaq Food eCommerce",category:"WordPress eCommerce",demo:"https://falaqfood-demo.phpx.shop/",image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaiRjmEbPoVfV5kVX79cIXb-RNGAx63KAYXQFDBwdIAFtdc6pStxTG4fuQv8wqri-8Y0sNT70755u6wUn_u3O-Gd-_VDUqWZrZEI6nm4uGRCw9oOwLQ9ed3nVVLlawVRAjyjytJ4DCfEm40E6GYv-8Y7YnNIBCfCHf1rzctZnZXtx83xTME8qtv7yecRY/s16000/FalaqFood_Style_eCommerce_Website_Ready_WordPress_Backup_Project.png"},
-  {title:"GadgetGhor Tech Store",category:"WordPress eCommerce",demo:"https://gadgetghor-demo.phpx.shop/",image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgusYnCO5sNnLm2kyB3W4vMGWxQBPy9eK3sMsOtd1eJmreMJGI3CzC5gU3G177Di5ucmSROEjHJBYcvS_ymlPzghBSX_LRF28IRcfT4q_9h8YqXiE_83VmAcUkjmbo4YZskVnSpCVdIXSkQ9WjkiY0u85qk9qZqmtZeyHoHJ3Qw8DR0plRmGuuAz6kXw/s16000/gadgetghor_%E2%80%93_Elementor_Gadget_eCommerce_Template_Backup_File.png"},
-  {title:"Noor Abaya Burka Store",category:"WordPress eCommerce",demo:"https://nooraabaya-demo.phpx.shop/",image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcJw8ZuuNGI3TnZWkRkYmzKPTxytzJOS4k9pJlqhO8zXbGOyd6bJO-sQaRbpD8JOqVmlzqK2q0yDWVulZmxKwGiFHwlzD3bVd6baO3GF02-mG7CaytcnD5nrMbYqpZpgMi8Rg_uXHuTAyqPKBO_zK3c4ggrco1EwHxRU5RIzP5YB10wXiV4V5ZRTLDCrE/s16000/NoorAbaya_%E2%80%93_Elementor_Burka_eCommerce_Template_Backup_File_1.png"},
-  {title:"Glamour Boutique Store",category:"WordPress eCommerce",demo:"https://glamour-demo.phpx.shop/",image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh86d5K_9EJF1to229RImX60JzhfRzL-_t3ume2B_ymUPxlSmn0x6sQZ4tC_fwwB0Pn3z6WYsud49plb7PPLTstVv-empoB05USOBUSZKEE_6-AfwlCm4770upJe22C8Tf-tzK8uGcd5FJE0ydS3Now0RGB4Fv4_NFdHHelL80MrFP5Sb1efUrgoKmHsEA/s16000/1%20(2).png"}
+  {
+    id: "proj-1",
+    title: "Meta Ads E-Commerce Scaling Campaign",
+    category: "Meta Ads",
+    filter: "metaads",
+    images: [
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "proj-2",
+    title: "B2B Lead Generation Meta Ads Funnel",
+    category: "Meta Ads",
+    filter: "metaads",
+    images: [
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "proj-3",
+    title: "High ROAS Google PPC Search Campaign",
+    category: "Google Ads",
+    filter: "googleads",
+    images: [
+      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "proj-4",
+    title: "Organic YouTube Channel SEO & Growth",
+    category: "SEO & Growth",
+    filter: "seo",
+    images: [
+      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "proj-5",
+    title: "Search Engine Optimization Case Study",
+    category: "SEO & Growth",
+    filter: "seo",
+    images: [
+      "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "proj-6",
+    title: "High-CTR YouTube Thumbnail Suite",
+    category: "Graphics Design",
+    filter: "graphics",
+    images: [
+      "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "proj-7",
+    title: "Social Media Poster & Creative Campaign",
+    category: "Graphics Design",
+    filter: "graphics",
+    images: [
+      "https://images.unsplash.com/photo-1542744094-3a31b272c490?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80"
+    ]
+  }
 ];
-document.getElementById('projGrid').innerHTML = projects.map((p,i)=>`
-  <div class="proj-card reveal fade-up" style="--d:${(i%3)*.12}s">
-    <div class="proj-img"><img src="${p.image}" alt="${p.title}" loading="lazy"/></div>
-    <div class="proj-body">
-      <span class="tag">${p.category}</span>
-      <h3>${p.title}</h3>
-      <a href="${p.demo}" target="_blank">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-    </div>
-  </div>`).join('');
 
+function renderProjects(filter = "all") {
+  const filtered = filter === "all" ? projects : projects.filter(p => p.filter === filter);
+  
+  document.getElementById('projGrid').innerHTML = filtered.map((p, i) => {
+    const imagesHTML = p.images.map((imgUrl, imgIdx) => `
+      <img src="${imgUrl}" alt="${p.title} - Image ${imgIdx + 1}" class="proj-slide-img" loading="lazy" data-projid="${p.id}" data-imgidx="${imgIdx}" />
+    `).join('');
+
+    const hasMultiple = p.images && p.images.length > 1;
+    const arrowsHTML = hasMultiple ? `
+      <button class="proj-slider-btn proj-slider-prev" aria-label="Previous image" data-projid="${p.id}" data-dir="-1">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="proj-slider-btn proj-slider-next" aria-label="Next image" data-projid="${p.id}" data-dir="1">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    ` : '';
+
+    return `
+      <div class="proj-card reveal fade-up" style="--d:${(i % 3) * .12}s">
+        <div class="proj-slider-wrap">
+          <div class="proj-slider">
+            ${imagesHTML}
+          </div>
+          ${arrowsHTML}
+        </div>
+        <div class="proj-body">
+          <span class="tag">${p.category}</span>
+          <h3>${p.title}</h3>
+          <a href="#contact">Inquire Strategy <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    `;
+  }).join('');
+  
+  bindReveal();
+}
+
+renderProjects();
+
+const projFilterButtons = document.querySelectorAll('[data-projfilter]');
+projFilterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    projFilterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderProjects(btn.getAttribute('data-projfilter'));
+  });
+});
+
+const lightboxOverlay = document.getElementById('lightboxOverlay');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+let currentActiveGallery = [];
+let currentGalleryIndex = 0;
+
+function openLightbox(gallery, startIndex) {
+  currentActiveGallery = gallery;
+  currentGalleryIndex = startIndex;
+  updateLightboxImage();
+  lightboxOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function updateLightboxImage() {
+  if (!currentActiveGallery || currentActiveGallery.length === 0) return;
+  lightboxImg.style.opacity = '0';
+  lightboxImg.style.transform = 'scale(0.95)';
+  
+  setTimeout(() => {
+    lightboxImg.src = currentActiveGallery[currentGalleryIndex];
+    lightboxImg.style.opacity = '1';
+    lightboxImg.style.transform = 'scale(1)';
+  }, 120);
+}
+
+function closeLightbox() {
+  lightboxOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Click listener on image elements and arrow buttons in cards
+document.getElementById('projGrid').addEventListener('click', (e) => {
+  const btn = e.target.closest('.proj-slider-btn');
+  if (btn) {
+    e.stopPropagation();
+    const dir = parseInt(btn.getAttribute('data-dir'), 10) || 1;
+    const card = btn.closest('.proj-card');
+    const slider = card ? card.querySelector('.proj-slider') : null;
+    if (slider) {
+      const slideW = slider.clientWidth;
+      slider.scrollBy({ left: dir * slideW, behavior: 'smooth' });
+    }
+    return;
+  }
+
+  const targetImg = e.target.closest('.proj-slide-img');
+  if (targetImg) {
+    const projId = targetImg.getAttribute('data-projid');
+    const imgIdx = parseInt(targetImg.getAttribute('data-imgidx'), 10) || 0;
+    const project = projects.find(p => p.id === projId);
+    
+    if (project && project.images) {
+      openLightbox(project.images, imgIdx);
+    }
+  }
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+
+lightboxOverlay.addEventListener('click', (e) => {
+  if (e.target === lightboxOverlay || e.target.classList.contains('lightbox-img-container')) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (!lightboxOverlay.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') nextLightboxImage();
+  if (e.key === 'ArrowLeft') prevLightboxImage();
+});
+
+// Touch Swipe Navigation inside Lightbox Popup (No visible dots or arrows)
+let touchStartX = 0;
+let touchEndX = 0;
+
+lightboxOverlay.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+lightboxOverlay.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipeGesture();
+}, { passive: true });
+
+function handleSwipeGesture() {
+  const swipeThreshold = 40;
+  if (touchEndX < touchStartX - swipeThreshold) {
+    nextLightboxImage(); // Swiped left -> next image
+  }
+  if (touchEndX > touchStartX + swipeThreshold) {
+    prevLightboxImage(); // Swiped right -> prev image
+  }
+}
+
+// Testimonials Data
 const reviews = [
-  {quote:"খালেদ ভাইয়ের তৈরি ই-কমার্স ওয়েবসাইটটি অসাধারণ! পিক্সেল ট্র্যাকিং ও চমৎকার স্পিডের কারণে আমার সেলস অনেক বৃদ্ধি পেয়েছে।",name:"আরিফুর রহমান",role:"উদ্যোক্তা, ঢাকা",avatar:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80"},
-  {quote:"চমৎকার ল্যান্ডিং পেজ ডিজাইন। রেসপন্স স্পিড অনেক ভালো আর পেজের কনভার্সন রেট এক কথায় খুবই অমায়িক।",name:"তাসলিমা সুলতানা",role:"বিউটি শপ ওনার, চট্টগ্রাম",avatar:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80"},
-  {quote:"ক্লিন কোড ও সুপার ফাস্ট ওয়েবসাইট। প্রফেশনালভাবে খুবই অল্প সময়ে কাজ সম্পন্ন করেছেন।",name:"মাহবুবুল আলম",role:"আইটি কনসালটেন্ট, রাজশাহী",avatar:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80"},
-  {quote:"আমি ফেসবুক বিজ্ঞাপনের কাজের জন্য ওনাকে হায়ার করেছিলাম। ওনার স্ট্র্যাটেজির কারণে কম খরচে সর্বোচ্চ সেল এসেছে।",name:"রফিকুল ইসলাম",role:"ফ্যাশন ব্র্যান্ড ওনার, খুলনা",avatar:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&h=120&q=80"},
-  {quote:"ওয়ার্ডপ্রেস স্পিড অপ্টিমাইজেশন ও সিকিউরিটির জন্য সেরা। ওনার তৈরি সাইট এখন বিদ্যুতের গতিতে লোড হয়।",name:"সাদিয়া আফরিন",role:"এজেন্সি ডিনাটেক্টার, সিলেট",avatar:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80"},
-  {quote:"আমার অনলাইন কোর্সের প্ল্যাটফর্মটি ওনার হাত দিয়ে তৈরি। চমৎকার মেম্বারশিপ ডিজাইন ও স্বয়ংক্রিয় সিস্টেম দারুণ ছিল।",name:"তানভীর আহমেদ",role:"অনলাইন ইনস্ট্রাক্টর, কুমিল্লা",avatar:"https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&h=120&q=80"}
+  {quote:"Emon managed our Meta Ads campaign and doubled our monthly sales ROAS. His audience targeting strategy and creative designs are top tier.",name:"Arifur Rahman",role:"E-Commerce Founder, Dhaka",avatar:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80"},
+  {quote:"The YouTube thumbnail designs and social media posters transformed our engagement rate. Views increased significantly in just 3 weeks!",name:"Taslima Sultana",role:"Content Creator, Chattogram",avatar:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80"},
+  {quote:"Superb SEO and Google Ads optimization. He brought high-converting organic leads for our service business quickly.",name:"Mahbubul Alam",role:"Business Director, Rajshahi",avatar:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80"},
+  {quote:"I hired him for full social media marketing and ad execution. Thanks to his campaign strategy, we achieved low cost per acquisition.",name:"Rafiqul Islam",role:"Brand Manager, Khulna",avatar:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&h=120&q=80"}
 ];
+
 const revTrack = document.getElementById('revTrack');
 revTrack.innerHTML = reviews.map(r=>`
   <div class="rev-slide">
@@ -1167,7 +1499,6 @@ renderDots();
 window.addEventListener('resize',()=>{renderDots();updateCarousel();});
 setTimeout(updateCarousel, 100);
 
-// auto-play reviews slider
 setInterval(()=>{
   const maxIdx = Math.max(0, reviews.length - getPerView());
   revIndex = revIndex>=maxIdx ? 0 : revIndex+1;
@@ -1175,6 +1506,7 @@ setInterval(()=>{
   document.querySelectorAll('.rev-dot').forEach((d,i)=>d.classList.toggle('active', i===revIndex));
 }, 5000);
 
+// Mobile Hamburger Menu
 const hamburgerBtn = document.getElementById('hamburger');
 const navLinksEl = document.getElementById('navLinks');
 
@@ -1183,7 +1515,6 @@ hamburgerBtn.addEventListener('click',()=>{
   navLinksEl.classList.toggle('open');
 });
 
-// Close menu when a link is clicked
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{
   hamburgerBtn.classList.remove('active');
   navLinksEl.classList.remove('open');
@@ -1220,7 +1551,6 @@ function runScrollSpy() {
 window.addEventListener('scroll', runScrollSpy);
 window.addEventListener('DOMContentLoaded', runScrollSpy);
 
-// Bind reveal triggers on page load
 bindReveal();
 window.addEventListener('load',bindReveal);
 
@@ -1240,7 +1570,7 @@ const countIO = new IntersectionObserver(entries=>{
 },{threshold:.5});
 document.querySelectorAll('[data-count]').forEach(el=>countIO.observe(el));
 
-// Form submission handler
+// Form submit trigger
 document.getElementById('contactForm').addEventListener('submit',e=>{
   e.preventDefault();
   const t = document.getElementById('toast');
