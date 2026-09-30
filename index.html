@@ -15,6 +15,8 @@
 :root{
   --bg:#f6f7fb; --dark:#0f172a; --blue:#2563eb; --blue-hover:#1d4ed8;
   --cyan:#06b6d4; --violet:#7c3aed; --yt-red:#ff0000;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --accent-cyan: #06b6d4;
   --slate-950:#090d16; --slate-900:#0f172a; --slate-800:#1e293b;
   --slate-700:#334155; --slate-600:#475569; --slate-500:#64748b;
   --slate-400:#94a3b8; --slate-300:#cbd5e1; --slate-200:#e2e8f0;
@@ -182,6 +184,78 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
   right: -0.8rem;
   mask-image: linear-gradient(to bottom, var(--violet) 70%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, var(--violet) 70%, transparent 100%);
+}
+/* Portrait Visual Stack */
+.hero-visual-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-portrait-card {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  border-radius: 32px;
+  background: linear-gradient(145deg, rgba(124, 58, 237, 0.4), rgba(37, 99, 235, 0.2));
+  padding: 12px;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  filter: contrast(1.03);
+}
+
+/* Floating Micro-Badges */
+.float-card {
+  position: absolute;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(16px);
+  padding: 14px 20px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-lg);
+  animation: floatAnim 4s ease-in-out infinite alternate;
+  z-index: 10;
+}
+
+.float-card.fc-1 {
+  top: 30px;
+  left: -40px;
+}
+
+.float-card.fc-2 {
+  bottom: 20px;
+  right: -30px;
+  animation-delay: -2s;
+}
+
+.float-card i {
+  font-size: 22px;
+  color: var(--accent-cyan);
+}
+
+.float-card-text div:first-child {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.float-card-text div:last-child {
+  font-size: 11px;
+  color: var(--text-sub);
+}
+
+@keyframes floatAnim {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-12px); }
 }
 
 /* Marquee */
@@ -409,7 +483,7 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
 
 /* Projects & Multi-Image Gallery */
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.proj-card{background:#fff;border:1px solid var(--slate-200);border-radius:20px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+.proj-card{background:#fff;border:1px solid var(--slate-200);border-radius:20px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column;cursor:pointer}
 .proj-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
 
 /* Horizontal sliding multi-image track inside portfolio cards */
@@ -480,7 +554,7 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
   transform: scale(1.03);
 }
 
-/* Lightbox Fullscreen Popup */
+/* Lightbox Fullscreen Popup & Navigation Arrows */
 .lightbox-overlay{
   position:fixed;
   inset:0;
@@ -523,6 +597,38 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
   transform:scale(1);
 }
 
+/* Lightbox Navigation Controls */
+.lightbox-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.3);
+  color:#fff;
+  font-size:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:all .25s ease;
+  z-index:10000;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+.lightbox-nav:hover{
+  background:var(--blue);
+  border-color:var(--blue);
+  transform:translateY(-50%) scale(1.12);
+}
+.lightbox-prev{
+  left:32px;
+}
+.lightbox-next{
+  right:32px;
+}
+
 /* Top Right Close Button */
 .lightbox-close{
   position:fixed;
@@ -552,6 +658,86 @@ button,input,textarea,select{font-family:'Syne',sans-serif}
 @media (max-width:640px){
   .lightbox-close{top:16px;right:16px;width:42px;height:42px;font-size:18px}
   .lightbox-overlay{padding:16px}
+  .lightbox-nav{width:44px;height:44px;font-size:18px}
+  .lightbox-prev{left:12px}
+  .lightbox-next{right:12px}
+}
+
+/* FAQ Accordion Section */
+.faq-accordion{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  max-width:820px;
+  margin:0 auto;
+}
+.faq-item{
+  background:#fff;
+  border:1px solid var(--slate-200);
+  border-radius:18px;
+  overflow:hidden;
+  transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:var(--shadow-sm);
+}
+.faq-item.active{
+  border-color:rgba(37, 99, 235, 0.4);
+  box-shadow:var(--shadow-md);
+}
+.faq-question{
+  width:100%;
+  padding:22px 26px;
+  background:transparent;
+  border:none;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  font-size:16.5px;
+  font-weight:700;
+  color:var(--slate-900);
+  text-align:left;
+  cursor:pointer;
+  transition:color 0.25s ease;
+}
+.faq-question:hover{
+  color:var(--blue);
+}
+.faq-item.active .faq-question{
+  color:var(--blue);
+}
+.faq-icon-box{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:var(--slate-100);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  transition:all 0.3s ease;
+}
+.faq-item.active .faq-icon-box{
+  background:linear-gradient(135deg, var(--blue), var(--violet));
+  color:#fff;
+}
+.faq-icon{
+  font-size:14px;
+  color:var(--blue);
+  transition:transform 0.3s ease;
+}
+.faq-item.active .faq-icon{
+  color:#fff;
+}
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-answer-content{
+  padding:0 26px 24px;
+  color:var(--slate-600);
+  font-size:15px;
+  line-height:1.68;
 }
 
 .proj-body{padding:22px;display:flex;flex-direction:column;flex-grow:1}
@@ -813,17 +999,39 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
           <a href="#projects" class="btn btn-outline">View Projects</a>
         </div>
         <div class="hero-stats">
-          <div class="stat-card reveal zoom-in" style="--d:.15s"><div class="val" data-count="100">0</div><div class="lbl">Monthly Sales ($k)</div></div>
-          <div class="stat-card reveal zoom-in" style="--d:.3s"><div class="val" data-count="500">0</div><div class="lbl">Campaigns Managed</div></div>
-          <div class="stat-card reveal zoom-in" style="--d:.45s"><div class="val">100%</div><div class="lbl">Growth Focus</div></div>
+          <div class="stat-card reveal zoom-in" style="--d:.15s">
+            <div class="val" data-count="5">05+</div>
+            <div class="lbl">Marketing Services</div>
+          </div>
+          <div class="stat-card reveal zoom-in" style="--d:.3s">
+            <div class="val" data-count="3">03+</div>
+            <div class="lbl">Design Services</div>
+          </div>
+          <div class="stat-card reveal zoom-in" style="--d:.45s">
+            <div class="val">100%</div>
+            <div class="lbl">Growth Focus</div>
+          </div>
         </div>
       </div>
 
-      <div class="home__images reveal fade-left">
-          <div class="home__box-1"></div>
-          <div class="home__box-2"></div>
-          <div class="home__box-3"></div>
-          <img src="Assets/img/home-img.png" alt="Digital marketing specialist portrait" class="home__img" >
+      <div class="hero-visual-wrap">
+        <div class="hero-portrait-card">
+          <img src="Assets/img/home image emon .png" alt="Emon Ahmed" class="hero-portrait-img" />
+        </div>
+        <div class="float-card fc-1">
+          <i class="fa-solid fa-chart-line"></i>
+          <div class="float-card-text">
+            <div>+340% Revenue</div>
+            <div>Avg. Campaign Growth</div>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <i class="fa-solid fa-bullseye"></i>
+          <div class="float-card-text">
+            <div>High CTR Design</div>
+            <div>Socials & Thumbnails</div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -839,7 +1047,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
   <div class="container">
     <div class="about-grid">
       <div class="about-img-wrap reveal fade-right">
-        <img src="Assets/img/20260321_141441.jpg (1).jpeg" alt="About Emon"/>
+        <img src="Assets/img/About image.jpeg" alt="About Emon"/>
         <div class="years-badge"><i class="fa-solid fa-award"></i><div class="yb-text">2+ Years<br/>of Experience</div></div>
       </div>
       <div class="reveal fade-left">
@@ -894,7 +1102,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
     <div class="reveal fade-up" style="text-align:center;margin-bottom:40px">
       <span class="kicker">Portfolio Gallery</span>
       <h2 class="section-title">Recent Marketing <span class="gradient-text">Work</span></h2>
-      <p style="color:var(--slate-500); max-width:620px; margin:10px auto 0; font-size:14.5px;">Slide through images on each project card. Click any image to open the fullscreen popup gallery.</p>
+      <p style="color:var(--slate-500); max-width:620px; margin:10px auto 0; font-size:14.5px;">Slide through images on each project card. Click any project card to open the fullscreen popup gallery.</p>
     </div>
 
     <!-- Portfolio Filter Tabs -->
@@ -923,6 +1131,81 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
       <button class="rev-btn" id="revPrev" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>
       <div class="rev-dots" id="revDots"></div>
       <button class="rev-btn" id="revNext" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section" id="faq" style="background:var(--slate-50)">
+  <div class="container">
+    <div class="reveal fade-up" style="text-align:center;margin-bottom:50px">
+      <span class="kicker">FAQ</span>
+      <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+      <p style="color:var(--slate-500); max-width:620px; margin:10px auto 0; font-size:14.5px;">Got questions? Here are answers to common questions about my marketing and design workflow.</p>
+    </div>
+
+    <div class="faq-accordion reveal fade-up" id="faqAccordion">
+      
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Q1. What digital marketing services do you offer?</span>
+          <div class="faq-icon-box"><i class="fa-solid fa-plus faq-icon"></i></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            I provide digital marketing services focused on helping businesses build their online presence and reach the right audience. My services include social media marketing, Meta Ads, Google Ads, SEO, and lead generation.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Q2. What design services do you provide?</span>
+          <div class="faq-icon-box"><i class="fa-solid fa-plus faq-icon"></i></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            I create YouTube thumbnails, social media graphics, posters, banners, and other marketing-focused visual designs designed to attract attention and support brand communication.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Q3. Can you work on both marketing and design projects?</span>
+          <div class="faq-icon-box"><i class="fa-solid fa-plus faq-icon"></i></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            Yes. I work across both digital marketing and creative design, allowing marketing campaigns and visual content to work together more effectively.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Q4. How do you approach a new project?</span>
+          <div class="faq-icon-box"><i class="fa-solid fa-plus faq-icon"></i></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            I first understand the client's goals, target audience, requirements, and preferred style. Then I plan the work, create the necessary assets or strategy, and refine the final result based on feedback.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Q5. How can I get started with a project?</span>
+          <div class="faq-icon-box"><i class="fa-solid fa-plus faq-icon"></i></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            You can contact me through the Contact Me section of this website and share your project requirements, goals, and timeline. I will review the details and discuss the next steps with you.
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -956,7 +1239,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
             <div class="ic"><i class="fa-solid fa-location-dot"></i></div>
             <div class="ci-content">
               <h4>Address</h4>
-              <p>Gosairhat, Shariatpur, Bangladesh</p>
+              <a href="https://maps.app.goo.gl/rT4WM52haBnLFujk9" >Bogura Sadar, Bangladesh</a>
             </div>
           </div>
         </div>
@@ -1013,7 +1296,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
           </div>
           <div class="f-contact-item">
             <i class="fa-solid fa-location-dot"></i>
-            <span>Gosairhat, Shariatpur</span>
+            <a href="https://maps.app.goo.gl/rT4WM52haBnLFujk9" >Bogura Sadar, Bangladesh</a>
           </div>
         </div>
       </div>
@@ -1046,9 +1329,15 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
   <button class="lightbox-close" id="lightboxClose" aria-label="Close">
     <i class="fa-solid fa-xmark"></i>
   </button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous Image">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
   <div class="lightbox-img-container">
     <img class="lightbox-img" id="lightboxImg" src="" alt="Portfolio preview"/>
   </div>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next Image">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
 </div>
 
 <script>
@@ -1205,7 +1494,7 @@ filterButtons.forEach(btn => {
   });
 });
 
-// Skills Data
+// Skills Data featuring Official 2022 Adobe Photoshop and Adobe Illustrator icons
 const skills = [
   {name:"Meta Ads",level:95,icon:"fa-brands fa-meta",bg:"linear-gradient(135deg,#0866ff,#0052cc)"},
   {name:"Google Ads",level:92,icon:"fa-brands fa-google",bg:"linear-gradient(135deg,#4285f4,#ea4335)"},
@@ -1215,14 +1504,25 @@ const skills = [
   {name:"Social Media Strategy",level:94,icon:"fa-solid fa-share-nodes",bg:"linear-gradient(135deg,#7c3aed,#5b21b6)"},
   {name:"Audience Targeting",level:95,icon:"fa-solid fa-users-viewfinder",bg:"linear-gradient(135deg,#06b6d4,#0891b2)"},
   {name:"A/B Split Testing",level:88,icon:"fa-solid fa-flask",bg:"linear-gradient(135deg,#f59e0b,#d97706)"},
-  {name:"Photoshop",level:90,icon:"fa-solid fa-image",bg:"linear-gradient(135deg,#001e36,#31a8ff)"},
-  {name:"Illustrator",level:86,icon:"fa-solid fa-bezier-curve",bg:"linear-gradient(135deg,#330000,#ff9a00)"},
+  {
+    name:"Adobe Photoshop ",
+    level:90,
+    svg:`<svg viewBox="0 0 512 512" width="40" height="40" style="display:block;"><rect width="512" height="512" rx="100" fill="#001E36"/><rect x="16" y="16" width="480" height="480" rx="84" stroke="#31A8FF" stroke-width="28" fill="none"/><path d="M 125 370 V 142 H 210 C 255 142 285 168 285 210 C 285 252 255 278 210 278 H 170 V 370 H 125 Z M 170 238 H 205 C 228 238 240 228 240 210 C 240 192 228 182 205 182 H 170 V 238 Z M 425 292 C 425 257 395 244 360 237 C 335 232 323 226 323 214 C 323 202 337 192 357 192 C 375 192 393 200 405 210 L 423 180 C 405 164 383 154 355 154 C 309 154 279 180 279 216 C 279 254 309 268 345 276 C 369 281 381 288 381 301 C 381 314 365 324 343 324 C 320 324 297 312 283 297 L 263 326 C 283 346 311 360 343 360 C 393 360 425 334 425 292 Z" fill="#31A8FF"/></svg>`,
+    bg:"transparent"
+  },
+  {
+    name:"Adobe Illustrator ",
+    level:86,
+    svg:`<svg viewBox="0 0 512 512" width="40" height="40" style="display:block;"><rect width="512" height="512" rx="100" fill="#330000"/><rect x="16" y="16" width="480" height="480" rx="84" stroke="#FF9A00" stroke-width="28" fill="none"/><path d="M 110 370 L 180 142 H 225 L 295 370 H 248 L 232 312 H 173 L 157 370 H 110 Z M 184 272 H 221 L 202.5 200 Z M 330 142 C 346 142 358 154 358 170 C 358 186 346 198 330 198 C 314 198 302 186 302 170 C 302 154 314 142 330 142 Z M 308 220 H 352 V 370 H 308 Z" fill="#FF9A00"/></svg>`,
+    bg:"transparent"
+  },
   {name:"YouTube SEO",level:92,icon:"fa-brands fa-youtube",bg:"linear-gradient(135deg,#ff0000,#92003b)"},
   {name:"Lead Funnels",level:90,icon:"fa-solid fa-filter-circle-dollar",bg:"linear-gradient(135deg,#2563eb,#7c3aed)"}
 ];
+
 document.getElementById('skillsGrid').innerHTML = skills.map((s,i)=>`
   <div class="skill-card reveal zoom-in" style="--d:${(i%4)*.08}s">
-    <div class="skill-icon" style="background:${s.bg}"><i class="${s.icon}"></i></div>
+    <div class="skill-icon" style="background:${s.bg}">${s.svg ? s.svg : `<i class="${s.icon}"></i>`}</div>
     <h4>${s.name}</h4>
     <div class="skill-bar"><div class="skill-fill" data-level="${s.level}"></div></div>
     <span class="skill-pct">${s.level}%</span>
@@ -1237,7 +1537,8 @@ const projects = [
     images: [
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
     ]
   },
   {
@@ -1287,9 +1588,9 @@ const projects = [
     category: "Graphics Design",
     filter: "graphics",
     images: [
-      "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+      "./Assets/img/YouTube-thumbnail-1.png",
+      "./Assets/img/YouTube-thumbnail-2.png",
+      "./Assets/img/YouTube thumbnail design 5.jpeg"
     ]
   },
   {
@@ -1323,7 +1624,7 @@ function renderProjects(filter = "all") {
     ` : '';
 
     return `
-      <div class="proj-card reveal fade-up" style="--d:${(i % 3) * .12}s">
+      <div class="proj-card reveal fade-up" style="--d:${(i % 3) * .12}s" data-projid="${p.id}">
         <div class="proj-slider-wrap">
           <div class="proj-slider">
             ${imagesHTML}
@@ -1333,7 +1634,7 @@ function renderProjects(filter = "all") {
         <div class="proj-body">
           <span class="tag">${p.category}</span>
           <h3>${p.title}</h3>
-          <a href="#contact">Inquire Strategy <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="proj-inquire-link">Inquire Strategy <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     `;
@@ -1353,14 +1654,18 @@ projFilterButtons.forEach(btn => {
   });
 });
 
+/* Lightbox Popup Navigation */
 const lightboxOverlay = document.getElementById('lightboxOverlay');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
 
 let currentActiveGallery = [];
 let currentGalleryIndex = 0;
 
-function openLightbox(gallery, startIndex) {
+function openLightbox(gallery, startIndex = 0) {
+  if (!gallery || gallery.length === 0) return;
   currentActiveGallery = gallery;
   currentGalleryIndex = startIndex;
   updateLightboxImage();
@@ -1377,7 +1682,7 @@ function updateLightboxImage() {
     lightboxImg.src = currentActiveGallery[currentGalleryIndex];
     lightboxImg.style.opacity = '1';
     lightboxImg.style.transform = 'scale(1)';
-  }, 120);
+  }, 100);
 }
 
 function closeLightbox() {
@@ -1385,13 +1690,25 @@ function closeLightbox() {
   document.body.style.overflow = '';
 }
 
-// Click listener on image elements and arrow buttons in cards
+function nextLightboxImage() {
+  if (!currentActiveGallery || currentActiveGallery.length === 0) return;
+  currentGalleryIndex = (currentGalleryIndex + 1) % currentActiveGallery.length;
+  updateLightboxImage();
+}
+
+function prevLightboxImage() {
+  if (!currentActiveGallery || currentActiveGallery.length === 0) return;
+  currentGalleryIndex = (currentGalleryIndex - 1 + currentActiveGallery.length) % currentActiveGallery.length;
+  updateLightboxImage();
+}
+
+// Open Lightbox when project card or image is clicked
 document.getElementById('projGrid').addEventListener('click', (e) => {
-  const btn = e.target.closest('.proj-slider-btn');
-  if (btn) {
+  const sliderBtn = e.target.closest('.proj-slider-btn');
+  if (sliderBtn) {
     e.stopPropagation();
-    const dir = parseInt(btn.getAttribute('data-dir'), 10) || 1;
-    const card = btn.closest('.proj-card');
+    const dir = parseInt(sliderBtn.getAttribute('data-dir'), 10) || 1;
+    const card = sliderBtn.closest('.proj-card');
     const slider = card ? card.querySelector('.proj-slider') : null;
     if (slider) {
       const slideW = slider.clientWidth;
@@ -1400,19 +1717,39 @@ document.getElementById('projGrid').addEventListener('click', (e) => {
     return;
   }
 
-  const targetImg = e.target.closest('.proj-slide-img');
-  if (targetImg) {
-    const projId = targetImg.getAttribute('data-projid');
-    const imgIdx = parseInt(targetImg.getAttribute('data-imgidx'), 10) || 0;
-    const project = projects.find(p => p.id === projId);
+  const inquireLink = e.target.closest('.proj-inquire-link');
+  if (inquireLink) return;
+
+  const card = e.target.closest('.proj-card');
+  if (card) {
+    const slider = card.querySelector('.proj-slider');
+    let activeIndex = 0;
+    if (slider) {
+      const slideWidth = slider.clientWidth || 1;
+      activeIndex = Math.round(slider.scrollLeft / slideWidth);
+    }
     
-    if (project && project.images) {
-      openLightbox(project.images, imgIdx);
+    const slideImgs = card.querySelectorAll('.proj-slide-img');
+    const projectImages = Array.from(slideImgs).map(img => img.getAttribute('src'));
+    
+    if (projectImages.length > 0) {
+      if (activeIndex >= projectImages.length) activeIndex = 0;
+      openLightbox(projectImages, activeIndex);
     }
   }
 });
 
 lightboxClose.addEventListener('click', closeLightbox);
+
+lightboxPrev.addEventListener('click', (e) => {
+  e.stopPropagation();
+  prevLightboxImage();
+});
+
+lightboxNext.addEventListener('click', (e) => {
+  e.stopPropagation();
+  nextLightboxImage();
+});
 
 lightboxOverlay.addEventListener('click', (e) => {
   if (e.target === lightboxOverlay || e.target.classList.contains('lightbox-img-container')) {
@@ -1427,7 +1764,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') prevLightboxImage();
 });
 
-// Touch Swipe Navigation inside Lightbox Popup (No visible dots or arrows)
+// Touch Swipe Navigation for mobile devices
 let touchStartX = 0;
 let touchEndX = 0;
 
@@ -1443,10 +1780,10 @@ lightboxOverlay.addEventListener('touchend', (e) => {
 function handleSwipeGesture() {
   const swipeThreshold = 40;
   if (touchEndX < touchStartX - swipeThreshold) {
-    nextLightboxImage(); // Swiped left -> next image
+    nextLightboxImage();
   }
   if (touchEndX > touchStartX + swipeThreshold) {
-    prevLightboxImage(); // Swiped right -> prev image
+    prevLightboxImage();
   }
 }
 
@@ -1506,6 +1843,37 @@ setInterval(()=>{
   document.querySelectorAll('.rev-dot').forEach((d,i)=>d.classList.toggle('active', i===revIndex));
 }, 5000);
 
+// FAQ Accordion Interaction Logic
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+  const btn = item.querySelector('.faq-question');
+  btn.addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+    
+    faqItems.forEach(otherItem => {
+      otherItem.classList.remove('active');
+      const ans = otherItem.querySelector('.faq-answer');
+      ans.style.maxHeight = null;
+      const ic = otherItem.querySelector('.faq-icon');
+      if (ic) {
+        ic.classList.remove('fa-minus');
+        ic.classList.add('fa-plus');
+      }
+    });
+
+    if (!isActive) {
+      item.classList.add('active');
+      const ans = item.querySelector('.faq-answer');
+      ans.style.maxHeight = ans.scrollHeight + 'px';
+      const ic = item.querySelector('.faq-icon');
+      if (ic) {
+        ic.classList.remove('fa-plus');
+        ic.classList.add('fa-minus');
+      }
+    }
+  });
+});
+
 // Mobile Hamburger Menu
 const hamburgerBtn = document.getElementById('hamburger');
 const navLinksEl = document.getElementById('navLinks');
@@ -1554,17 +1922,20 @@ window.addEventListener('DOMContentLoaded', runScrollSpy);
 bindReveal();
 window.addEventListener('load',bindReveal);
 
-const countUp = el=>{
+const countUp = el => {
   const target = +el.dataset.count;
+  if (isNaN(target)) return;
   const dur = 1800, start = performance.now();
-  const tick = now=>{
-    const p = Math.min((now-start)/dur,1);
-    el.textContent = Math.floor(target*p) + (target>=1000?'+':'k');
-    if(p<1) requestAnimationFrame(tick);
-    else el.textContent = target>=1000 ? target+'+' : target+'k';
+  const tick = now => {
+    const p = Math.min((now - start) / dur, 1);
+    const val = Math.floor(target * p);
+    el.textContent = (val < 10 ? '0' + val : val) + '+';
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = (target < 10 ? '0' + target : target) + '+';
   };
   requestAnimationFrame(tick);
 };
+
 const countIO = new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){countUp(e.target);countIO.unobserve(e.target);}});
 },{threshold:.5});
